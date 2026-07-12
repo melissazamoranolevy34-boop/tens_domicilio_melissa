@@ -2,23 +2,64 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>melissa zamorano levy - tens & salud digital</title>
+<title>tens_domicilio_melissa | Atención Clínica Profesional</title>
+
+<!-- Fuente Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ===========================
-   estilo general
+   ESTILO GENERAL
 =========================== */
 body {
   background: #03121d;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #e8f7ff;
   margin: 0;
   overflow-x: hidden;
 }
-html { scroll-behavior: smooth; }
 
 /* ===========================
-   menú
+   PARTÍCULAS NEON FUTURISTAS
+=========================== */
+.particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle, rgba(0,255,255,0.18) 3px, transparent 3px),
+    radial-gradient(circle, rgba(0,200,255,0.18) 3px, transparent 3px);
+  background-size: 60px 60px;
+  animation: neonMove 18s linear infinite;
+  z-index: -1;
+}
+@keyframes neonMove {
+  from { background-position: 0 0, 30px 30px; }
+  to { background-position: 600px 600px, 630px 630px; }
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+.fade-move {
+  animation: fadeMove 2s ease forwards;
+}
+@keyframes fadeMove {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.float {
+  animation: floatImg 4s ease-in-out infinite;
+}
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===========================
+   MENÚ
 =========================== */
 .menu {
   position: fixed;
@@ -41,217 +82,191 @@ html { scroll-behavior: smooth; }
 .menu a {
   color: #4fe3ff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1rem;
-  text-shadow: 0 0 8px #00eaff;
   transition: 0.3s;
 }
 .menu a:hover {
   color: white;
   text-shadow: 0 0 15px #00eaff;
 }
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #4fe3ff;
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 2000;
-  cursor: pointer;
-}
 
 /* ===========================
-   fondo animado
+   HERO FUTURISTA
 =========================== */
-.particles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.imgur.com/9aKxH0R.png');
-  opacity: 0.15;
-  animation: moveParticles 40s linear infinite;
-  z-index: -1;
-}
-@keyframes moveParticles {
-  from { transform: translateY(0); }
-  to { transform: translateY(-2000px); }
+.hero {
+  margin-top: 90px;
+  padding: 60px 30px;
+  text-align: center;
+  background: linear-gradient(180deg, #04263b, #03121d);
+  border-bottom: 2px solid #00c6ff;
+  box-shadow: 0 0 25px #00c6ff55;
 }
 
-/* ===========================
-   animaciones
-=========================== */
-@keyframes glowPulse {
-  0% { filter: drop-shadow(0 0 5px #00eaff); }
-  50% { filter: drop-shadow(0 0 20px #00eaff); }
-  100% { filter: drop-shadow(0 0 5px #00eaff); }
+.hero img {
+  width: auto;
+  max-width: 260px;
+  border-radius: 50%;
+  border: 4px solid #00eaff;
+  box-shadow: 0 0 25px #00eaff;
 }
 
-@keyframes floatMedium {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.img-anim {
-  animation: floatMedium 4s ease-in-out infinite,
-             glowPulse 3s ease-in-out infinite,
-             fadeIn 1.2s ease forwards;
-}
-
-/* efecto zoom */
-.hover-zoom {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-zoom:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00c6ff;
-}
-
-/* titulos */
-.neon-title {
+.hero h1 {
+  font-size: 2.4rem;
   color: #4fe3ff;
+  text-shadow: 0 0 15px #00eaff;
+  margin-top: 20px;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.hero .marca {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  color: #00eaff;
+  font-weight: 700;
   text-shadow: 0 0 12px #00eaff;
 }
-.neon-sub {
-  color: #00c6ff;
-  text-shadow: 0 0 10px #0099cc;
-}
 
 /* ===========================
-   header
-=========================== */
-.perfil-tens {
-  margin-top: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #062233;
-  padding: 40px;
-  border-bottom: 2px solid #00c6ff;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* imágenes tamaño normal */
-.perfil-foto {
-  width: auto;
-  max-width: 350px;
-  border-radius: 50%;
-  border: 3px solid #4fe3ff;
-  box-shadow: 0 0 20px #00c6ff;
-}
-
-.tens-cruz {
-  width: auto;
-  max-width: 250px;
-}
-
-.acreditacion-card img {
-  width: auto !important;
-  max-width: 350px;
-  height: auto;
-  margin: auto;
-  display: block;
-}
-
-/* ===========================
-   secciones
+   SECCIONES
 =========================== */
 section {
   padding: 50px 30px;
   max-width: 1100px;
   margin: auto;
 }
+
 .tens-grid, .acreditaciones-grid, .desc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
+
 .tens-block, .acreditacion-card, .desc-card {
   background: #082536;
   padding: 20px;
   border-radius: 15px;
   border: 1px solid #00c6ff55;
   box-shadow: 0 0 15px #00c6ff33;
-}
-
-/* listas */
-.tens-block ul { list-style: none; padding: 0; }
-.tens-block li {
-  margin-bottom: 8px;
-  padding-left: 20px;
-  position: relative;
-}
-.tens-block li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #00e6b8;
-}
-
-/* botones */
-.btn-descargar {
-  display: inline-block;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
   transition: 0.3s;
 }
-.btn-descargar:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px #00c6ff;
+.tens-block:hover, .acreditacion-card:hover, .desc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00c6ff;
 }
 
-/* contacto */
-.contacto {
+/* ===========================
+   IMÁGENES CON MARCO NEON
+=========================== */
+.acreditacion-card img {
+  width: auto;
+  max-width: 260px;
+  display: block;
+  margin: auto;
+  border: 3px solid #00eaff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00eaff;
+}
+
+/* ===========================
+   BOTÓN CONTACTO
+=========================== */
+.contacto-btn {
+  display: inline-block;
+  background: #00eaff;
+  color: #03121d;
+  padding: 15px 25px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px #00eaff;
+  transition: 0.3s;
+}
+.contacto-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00eaff;
+}
+
+/* ===========================
+   BANNER FUTURISTA MINSAL
+=========================== */
+.minsal-banner {
+  background: linear-gradient(90deg, #003b52, #005f7a);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #00eaff;
+  box-shadow: 0 0 25px #00eaff;
   text-align: center;
-  padding-bottom: 80px;
 }
 
-/* botón whatsapp */
+.minsal-banner h3 {
+  color: #4fe3ff;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.minsal-banner a {
+  color: #00eaff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.minsal-banner a:hover {
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* ===========================
+   CONTACTO PROFESIONAL
+=========================== */
+.contacto-box {
+  background: linear-gradient(90deg, #003b52, #005f7a);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #00eaff;
+  box-shadow: 0 0 25px #00eaff;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ===========================
+   BOTÓN FLOTANTE
+=========================== */
 .whatsapp {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: #00e676;
-  color: white;
+  background: #00eaff;
+  color: #03121d;
   font-size: 2rem;
   padding: 12px 18px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 0 15px #00ff9d;
+  box-shadow: 0 0 20px #00eaff;
   transition: 0.3s;
 }
 .whatsapp:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 25px #00ff9d;
 }
 
 /* ===========================
-   responsive
+   RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
-  .perfil-tens { text-align: center; justify-content: center; }
-  .perfil-foto { max-width: 250px; }
-  .tens-cruz { max-width: 180px; }
-  .menu ul {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 20, 40, 0.95);
-    padding: 20px;
-    gap: 20px;
-  }
-  .menu.show ul { display: flex; }
-  .menu-toggle { display: block; }
+  .hero img { max-width: 200px; }
 }
 </style>
 </head>
@@ -260,156 +275,184 @@ section {
 
 <div class="particles"></div>
 
-<div class="menu-toggle" onclick="document.querySelector('.menu').classList.toggle('show')">☰</div>
-
 <nav class="menu">
   <ul>
-    <li><a href="#tens">servicios</a></li>
-    <li><a href="#acreditaciones">acreditaciones</a></li>
-    <li><a href="#descargables">descargables</a></li>
-    <li><a href="#contacto">contacto</a></li>
+    <li><a href="#tens">Servicios</a></li>
+    <li><a href="#acreditaciones">Acreditaciones</a></li>
+    <li><a href="#descargables">Documentos</a></li>
+    <li><a href="#minsal">MINSAL</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
-<header class="perfil-tens fade-in">
-  <img src="img/img_perfil.jpeg" class="perfil-foto img-anim">
-  <div class="perfil-info">
-    <h1 class="neon-title">Melissa Zamorano Levy</h1>
-    <h2 class="neon-sub">Técnico Superior en Enfermería | Tecnóloga en Informática Biomédica | cuidados a domicilio</h2>
-    <p>
-      TENS con amplia experiencia en UCI, cuidados críticos y atención domiciliaria. 
-      Realizo curaciones avanzadas, administración de medicamentos, manejo de dispositivos (SNG, PEG, traqueostomía, colostomía), monitoreo clínico.
-      Atención profesional, segura y personalizada directamente en tu hogar.
-    </p>
-  </div>
-  <img src="img/cruz_informatica.png" class="tens-cruz img-anim">
-</header>
+<!-- ===========================
+     HERO FUTURISTA
+=========================== -->
+<div class="hero fade-move">
+  <img src="img/img_perfil.jpeg" class="float">
+  <h1>Melissa Zamorano Levy</h1>
+  <h2>TENS | Tecnóloga en Informática Biomédica</h2>
+  <p>Profesional con 16 años de experiencia en UCI, cuidados críticos y salud digital. Atención segura, humanizada y basada en evidencia.</p>
 
-<section id="tens">
-  <h2 class="neon-title">🩺 servicios profesionales a domicilio</h2>
-  <p style="max-width:900px; margin:auto; text-align:center; margin-bottom:35px;">
-    Técnico Superior en Enfermería con más de 16 años de experiencia especializada en pacientes críticos. 
-    Atención domiciliaria segura, humana y confiable.
-    cuidados críticos y atención domiciliaria.
-    ofrezco cuidados clínicos seguros, humanizados y basados en evidencia directamente en tu hogar.
-  </p>
+  <div class="marca">tens_domicilio_melissa</div>
+</div>
 
+<!-- ===========================
+     SERVICIOS
+=========================== -->
+<section id="tens" class="fade-move">
+  <h2 class="neon-title">🩺 Servicios profesionales</h2>
   <div class="tens-grid">
-
-    <div class="tens-block hover-zoom fade-in">
-      <h3>cuidados clínicos generales</h3>
+    <div class="tens-block">
+      <h3>Cuidados generales</h3>
       <ul>
-        <li>control y registro de signos vitales.</li>
-        <li>administración segura de medicamentos.</li>
-        <li>curaciones simples y avanzadas.</li>
-        <li>manejo de bombas de infusión.</li>
-        <li>prevención de úlceras por presión.</li>
+        <li>Signos vitales</li>
+        <li>Administración de medicamentos</li>
+        <li>Curaciones avanzadas</li>
       </ul>
     </div>
 
-    <div class="tens-block hover-zoom fade-in">
-      <h3>alta dependencia y cuidados críticos</h3>
+    <div class="tens-block">
+      <h3>Alta dependencia</h3>
       <ul>
-        <li>manejo de pacientes ventilados.</li>
-        <li>cuidados respiratorios y oxigenoterapia.</li>
-        <li>manejo de traqueostomía.</li>
-        <li>manejo de colostomía y dispositivos.</li>
-        <li>monitoreo clínico continuo.</li>
+        <li>Ventilación</li>
+        <li>Traqueostomía</li>
+        <li>Oxigenoterapia</li>
       </ul>
     </div>
 
-    <div class="tens-block hover-zoom fade-in">
-      <h3>atención domiciliaria integral</h3>
+    <div class="tens-block">
+      <h3>Atención domiciliaria</h3>
       <ul>
-        <li>
-          administración segura de medicamentos por todas las vías clínicas habituales: vía oral, subcutánea, intramuscular, endovenosa, rectal, tópica,
-          oftálmica, ótica, nasal, inhalatoria, sublingual y enteral (SNG/PEG), conforme a indicación médica y protocolos de seguridad.
-        </li>
-        <li>curaciones avanzadas y manejo de heridas.</li>
-        <li>alimentación asistida (oral, sng, peg).</li>
-        <li>toma de muestras y trazabilidad.</li>
-        <li>acompañamiento terapéutico y educación familiar.</li>
+        <li>Alimentación asistida</li>
+        <li>Toma de muestras</li>
+        <li>Educación familiar</li>
       </ul>
     </div>
 
-    <div class="tens-block hover-zoom fade-in">
-      <h3>gestión, seguridad y salud digital</h3>
+    <div class="tens-block">
+      <h3>Salud digital</h3>
       <ul>
-        <li>bioseguridad y control de infecciones.</li>
-        <li>registro clínico electrónico.</li>
-        <li>reporte de eventos adversos.</li>
-        <li>continuidad del cuidado y calidad del dato.</li>
+        <li>Registro clínico</li>
+        <li>Eventos adversos</li>
+        <li>Calidad del dato</li>
       </ul>
     </div>
-
   </div>
 </section>
 
-<section id="acreditaciones">
-  <h2 class="neon-title">🎓 acreditaciones y formación profesional</h2>
-
+<!-- ===========================
+     ACREDITACIONES
+=========================== -->
+<section id="acreditaciones" class="fade-move">
+  <h2 class="neon-title">🎓 Acreditaciones</h2>
   <div class="acreditaciones-grid">
-
-    <div class="acreditacion-card hover-zoom fade-in">
-      <img src="img/acreditada.jpg" class="img-anim">
-      <h3>Técnico Superior de Enfermería (TENS)</h3>
-      <p>Duoc UC | experiencia en uci, uti, upc y cuidados críticos.</p>
+    <div class="acreditacion-card">
+      <img src="img/acreditada.jpg">
+      <h3>TENS</h3>
+      <p>Duoc UC | UCI, UTI, UPC</p>
     </div>
 
-    <div class="acreditacion-card hover-zoom fade-in">
-      <img src="img/cruz-tens.png" class="img-anim">
-      <h3>tecnóloga en informática biomédica</h3>
-      <p>Duoc UC | salud digital, HIS, interoperabilidad y datos clínicos.</p>
+    <div class="acreditacion-card">
+      <img src="img/cruz-tens.png">
+      <h3>Tecnóloga en Informática Biomédica</h3>
+      <p>Duoc UC | HIS, interoperabilidad</p>
     </div>
-
   </div>
 </section>
 
-<section id="descargables">
-  <h2 class="neon-title">📄 documentos descargables</h2>
-
+<!-- ===========================
+     DOCUMENTOS
+=========================== -->
+<section id="descargables" class="fade-move">
+  <h2 class="neon-title">📄 Documentos descargables</h2>
   <div class="desc-grid">
-
-    <div class="desc-card hover-zoom fade-in">
-      <h3>título tens</h3>
-      <a href="docs/certificado_titulo_tens.pdf" class="btn-descargar" download>descargar pdf</a>
+    <div class="desc-card">
+      <h3>Título TENS</h3>
+      <a href="docs/certificado_titulo_tens.pdf" class="contacto-btn">Descargar PDF</a>
     </div>
 
-    <div class="desc-card hover-zoom fade-in">
-      <h3>certificado tens</h3>
-      <a href="docs/certificado_titulo_tecnologa.pdf" class="btn-descargar" download>descargar pdf</a>
+    <div class="desc-card">
+      <h3>Título Tecnóloga</h3>
+      <a href="docs/certificado_titulo_tecnologa.pdf" class="contacto-btn">Descargar PDF</a>
     </div>
 
-    <div class="desc-card hover-zoom fade-in">
-      <h3>registro nacional de prestadores</h3>
-      <a href="docs/certificado_registro_prestadores.pdf" class="btn-descargar" download>descargar pdf</a>
+    <div class="desc-card">
+      <h3>Registro Prestadores</h3>
+      <a href="docs/certificado_registro_prestadores.pdf" class="contacto-btn">Descargar PDF</a>
     </div>
 
-    <div class="desc-card hover-zoom fade-in">
-      <h3>vacuna hepatitis b</h3>
-      <a href="docs/certificado_vacuna_hepatitis_b.pdf" class="btn-descargar" download>descargar pdf</a>
+    <div class="desc-card">
+      <h3>Vacuna Hepatitis B</h3>
+      <a href="docs/certificado_vacuna_hepatitis_b.pdf" class="contacto-btn">Descargar PDF</a>
     </div>
 
-    <div class="desc-card hover-zoom fade-in">
-      <h3>cv profesional</h3>
-      <a href="docs/curriculum_profesional.pdf" class="btn-descargar" download>descargar pdf</a>
+    <div class="desc-card">
+      <h3>CV Profesional</h3>
+      <a href="docs/curriculum_profesional.pdf" class="contacto-btn">Descargar PDF</a>
     </div>
-
   </div>
 </section>
 
-<section id="contacto" class="contacto">
-  <h2 class="neon-title">📞 agenda tu atención a domicilio</h2>
-  <p>zona de atención: puente alto, la florida, san bernardo, pirque y alrededores.</p>
-  <p><strong>whatsapp:</strong> +56 9 5875 8398</p>
-  <p><strong>email:</strong> melissazamoranolevy34@gmail.com</p>
-  <p><strong>linkedin:</strong> linkedin.com/in/melissa-z-7713a4217</p>
-  <p style="margin-top:20px; font-size:1.1rem; color:#4fe3ff;">
-    atención profesional, segura y personalizada directamente en tu hogar.
-  </p>
+<!-- ===========================
+     MINSAL BANNER FUTURISTA
+=========================== -->
+<section id="minsal" class="fade-move">
+  <div class="minsall-banner">
+    <h3>Ministerio de Salud (MINSAL)</h3>
+    <p>Información oficial del sistema de salud en Chile.</p>
+    <a href="https://www.minsal.cl/contacto/" target="_blank">Ir al contacto oficial del MINSAL</a>
+  </div>
 </section>
 
-<a href="https://wa.me/56958758398" class="whatsapp" target="_blank">💬</a>
+<!-- ===========================
+     CONTACTO PROFESIONAL
+=========================== -->
+<section id="contacto" class="fade-move">
+  <h2 class="neon-title">📞 Contacto Profesional</h2>
+
+  <div class="contacto-box">
+    <p style="font-size:1.3rem; margin:10px 0;">
+      <strong>📞 Teléfono / WhatsApp:</strong><br>
+      <span style="color:#00eaff; font-size:1.4rem; font-weight:700;">
+        +56 9 5875 8398
+      </span>
+    </p>
+
+    <p style="font-size:1.3rem; margin:10px 0;">
+      <strong>📧 Email:</strong><br>
+      <span style="color:#00eaff; font-size:1.2rem; font-weight:700;">
+        melissazamoranolevy34@gmail.com
+      </span>
+    </p>
+
+    <p style="font-size:1.3rem; margin:10px 0;">
+      <strong>🔗 LinkedIn:</strong><br>
+      <a href="https://www.linkedin.com/in/melissa-z-7713a4217" target="_blank"
+        style="color:#00eaff; font-size:1.2rem; font-weight:700; text-decoration:none;">
+        linkedin.com/in/melissa-z-7713a4217
+      </a>
+    </p>
+
+    <br>
+
+    <div class="marca" style="margin-top:15px; font-size:1.3rem;">
+      tens_domicilio_melissa
+    </div>
+
+    <br>
+
+    <a href="https://www.minsal.cl/contacto/" target="_blank" class="contacto-btn">
+      Contacto oficial MINSAL
+    </a>
+  </div>
+</section>
+
+<!-- ===========================
+     BOTÓN FLOTANTE
+=========================== -->
+<a href="https://www.minsal.cl/contacto/" class="whatsapp">💬</a>
 
 </body>
 </html>
+
