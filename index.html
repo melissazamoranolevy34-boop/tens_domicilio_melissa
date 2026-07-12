@@ -137,13 +137,28 @@ html { scroll-behavior: smooth; }
   flex-wrap: wrap;
   gap: 20px;
 }
+
+/* imágenes tamaño normal */
 .perfil-foto {
-  width: 180px;
+  width: auto;
+  max-width: 350px;
   border-radius: 50%;
   border: 3px solid #4fe3ff;
   box-shadow: 0 0 20px #00c6ff;
 }
-.tens-cruz { width: 120px; }
+
+.tens-cruz {
+  width: auto;
+  max-width: 250px;
+}
+
+.acreditacion-card img {
+  width: auto !important;
+  max-width: 350px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
 
 /* ===========================
    secciones
@@ -226,8 +241,8 @@ section {
 =========================== */
 @media (max-width: 900px) {
   .perfil-tens { text-align: center; justify-content: center; }
-  .perfil-foto { width: 150px; }
-  .tens-cruz { width: 90px; }
+  .perfil-foto { max-width: 250px; }
+  .tens-cruz { max-width: 180px; }
   .menu ul {
     display: none;
     flex-direction: column;
@@ -336,13 +351,13 @@ section {
   <div class="acreditaciones-grid">
 
     <div class="acreditacion-card hover-zoom fade-in">
-      <img src="img/acreditada.jpg" class="img-anim" style="width:100%; height:auto;">
+      <img src="img/acreditada.jpg" class="img-anim">
       <h3>Técnico Superior de Enfermería (TENS)</h3>
       <p>Duoc UC | experiencia en uci, uti, upc y cuidados críticos.</p>
     </div>
 
     <div class="acreditacion-card hover-zoom fade-in">
-      <img src="img/cruz-tens.png" class="img-anim" style="width:100%; height:auto;">
+      <img src="img/cruz-tens.png" class="img-anim">
       <h3>tecnóloga en informática biomédica</h3>
       <p>Duoc UC | salud digital, HIS, interoperabilidad y datos clínicos.</p>
     </div>
@@ -376,8 +391,8 @@ section {
     </div>
 
     <div class="desc-card hover-zoom fade-in">
-      <h3>cv profesional </h3>
-      <a href="docs/curriculum_profesional" class="btn-descargar" download>descargar pdf</a>
+      <h3>cv profesional</h3>
+      <a href="docs/curriculum_profesional.pdf" class="btn-descargar" download>descargar pdf</a>
     </div>
 
   </div>
